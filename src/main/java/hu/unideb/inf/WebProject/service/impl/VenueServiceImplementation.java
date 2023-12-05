@@ -5,7 +5,7 @@ import hu.unideb.inf.WebProject.entity.Venue;
 import hu.unideb.inf.WebProject.repository.PerformerRepository;
 import hu.unideb.inf.WebProject.repository.VenueRepository;
 import hu.unideb.inf.WebProject.service.VenueService;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class VenueServiceImplementation implements VenueService {
 
     @Override
     public VenueDTO create(VenueDTO venueDTO) {
-        Venue venue = new Venue(venueDTO.venueId(), venueDTO.venueName(), venueDTO.venueLocation(), venueDTO.price(), performerRepository.getReferenceById(venueDTO.performersId()));
+        Venue venue = new Venue(venueDTO.venueId(), venueDTO.venueName(), venueDTO.venueLocation(), venueDTO.price(), performerRepository.getReferenceById(venueDTO.performerId()));
         venue = venueRepository.save(venue);
         return new VenueDTO(venue.getVenueId(), venue.getVenueName(), venue.getVenueLocation(), venue.getPrice(), venue.getPerformerDto().getPerformerId());
     }
@@ -36,7 +36,7 @@ public class VenueServiceImplementation implements VenueService {
 
     @Override
     public VenueDTO update(VenueDTO venueDTO) {
-        Venue venue = new Venue(venueDTO.venueId(), venueDTO.venueName(), venueDTO.venueLocation(), venueDTO.price(), performerRepository.getReferenceById(venueDTO.performersId()));
+        Venue venue = new Venue(venueDTO.venueId(), venueDTO.venueName(), venueDTO.venueLocation(), venueDTO.price(), performerRepository.getReferenceById(venueDTO.performerId()));
         venue = venueRepository.save(venue);
         return new VenueDTO(venue.getVenueId(), venue.getVenueName(), venue.getVenueLocation(), venue.getPrice(), venue.getPerformerDto().getPerformerId());
     }

@@ -1,6 +1,6 @@
 package hu.unideb.inf.WebProject.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -68,11 +68,7 @@ public class Venue implements Serializable {
         this.price = price;
     }
 
-    public Performer getPerformer() {
-        return performer;
-    }
-
-    public void setPerformer(Performer performer) {
+    public void setPerformerDto() {
         this.performer = performer;
     }
 

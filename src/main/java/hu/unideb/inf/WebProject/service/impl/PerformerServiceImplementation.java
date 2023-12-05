@@ -4,7 +4,7 @@ import hu.unideb.inf.WebProject.DTO.PerformerDTO;
 import hu.unideb.inf.WebProject.entity.Performer;
 import hu.unideb.inf.WebProject.repository.PerformerRepository;
 import hu.unideb.inf.WebProject.service.PerformerService;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

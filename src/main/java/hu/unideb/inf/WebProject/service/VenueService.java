@@ -9,7 +9,7 @@ public interface VenueService {
 
     public List<VenueDTO> readAll();
 
-    public VenueDTO update(VenueDTO order);
+    public VenueDTO update(VenueDTO venueDTO);
 
     public void delete(Long id);
 }
